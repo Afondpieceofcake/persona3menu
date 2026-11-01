@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body style="background-color: #3fbcff">
+    <div class="main-menu">
+      <div class="item-holder">
+        <p class="menu-item">SKILL</p>
+        <p class="menu-item">ITEM</p>
+        <p class="menu-item">EQUIP</p>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
+<!-- thinking of using a variable called selector and adding and subtracting it and based on the selector value, the according box reacts with the animation. -->
