@@ -37,32 +37,35 @@
   border-radius: 16px;
   margin: 5px;
   position: relative;
-  isolation: isolate;
 }
 
 .selected {
-  color: red;
+  color: rgb(0, 8, 51);
   background: transparent;
-  width: 300px;
-  aspect-ratio: 1;
+  transition:
+    transform 0.4s ease-out,
+    opacity 0.4s ease-out;
+  transform-origin: center;
 }
 
 .selected::before {
-  content: "";
+  content: attr(data-text);
   position: absolute;
-  inset: 0;
-  background: white;
-  clip-path: polygon(90% 0%, 70% 95%, 0% 65%);
-  z-index: -1;
-}
+  color: #ff1900;
+  background: rgb(255, 255, 255);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  top: -30%;
+  left: -12.4%;
+  width: 300px;
 
-.selected::after {
-  content: "";
-  position: absolute;
-  inset: 5px -5px -5px 5px;
-  background: aqua;
-  clip-path: polygon(90% 0%, 70% 95%, 0% 65%);
-  z-index: -2;
+  clip-path: polygon(0% 70%, 78% 65%, 100% 20%);
+  z-index: 2;
+  transition:
+    transform 0.4s ease-out,
+    opacity 0.4s ease-out;
+  transform-origin: center;
 }
 
 /* make 3 different ones, and loop their usage */
