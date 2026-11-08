@@ -6,15 +6,24 @@
   font-display: swap;
 }
 
+body {
+  background: linear-gradient(180deg, #1ea4fd, #0218bf);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-menu {
-  position: relative;
+  position: absolute;
   width: 15rem;
   height: 15rem;
   background-color: aliceblue;
   border-radius: 150px;
-  top: 50%;
-  left: calc(50% - 15rem);
   display: flex;
+  transform: translateY(100%);
 }
 
 .item-holder {
@@ -66,6 +75,64 @@
     transform 0.4s ease-out,
     opacity 0.4s ease-out;
   transform-origin: center;
+}
+
+.selected::after {
+  content: attr(data-text);
+  position: absolute;
+  color: #ff1900;
+  background: #ff5fb9;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  top: -27%;
+  left: -50%;
+  width: 500px;
+
+  clip-path: polygon(20% 66%, 66% 70%, 80% 26%);
+  z-index: 1;
+  transition:
+    transform 0.4s ease-out,
+    opacity 0.4s ease-out;
+  transform-origin: center;
+}
+
+.selected.active {
+  color: rgb(0, 8, 51);
+  background: transparent;
+  transform: scale(1.2);
+}
+
+.selected.active::before {
+  content: attr(data-text);
+  position: absolute;
+  color: #ff1900;
+  background: rgb(255, 255, 255);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  top: -30%;
+  left: -12.4%;
+  width: 300px;
+
+  clip-path: polygon(0% 70%, 78% 65%, 100% 20%);
+  z-index: 2;
+}
+
+.selected.active::after {
+  content: attr(data-text);
+  position: absolute;
+  color: #ff1900;
+  background: #ff5fb9;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  top: -27%;
+  left: -50%;
+  width: 500px;
+
+  clip-path: polygon(20% 66%, 66% 70%, 80% 26%);
+  z-index: 1;
 }
 
 /* make 3 different ones, and loop their usage */

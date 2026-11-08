@@ -33,28 +33,3 @@ function itemSelect(element) {
 }
 
 itemSelect();
-
-const selected = document.querySelector(".selected");
-
-async function animateSelection() {
-  //Enlargen title with selected.animate
-  selected.animate([{ transform: "scale(1)" }, { transform: "scale(1.2)" }], {
-    duration: 400,
-    easing: "ease-out",
-    fill: "forwards",
-  });
-
-  //reveal white polygon
-  ([
-    { opacity: 0, transform: "scale(0.7)" },
-    { opacity: 1, transform: "scale(1)" },
-  ],
-    {
-      duration: 350,
-      easing: "ease-out",
-      fill: "forwards",
-      pseudoElement: "::before",
-    }.finished);
-}
-
-animateSelection();
