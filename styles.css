@@ -17,10 +17,10 @@ body {
 }
 
 .main-menu {
-  position: fixed;
+  position: relative;
   width: 15rem;
   height: 15rem;
-  left: 9%;
+  left: 20%;
   background-color: aliceblue;
   border-radius: 150px;
   display: flex;
@@ -152,4 +152,17 @@ body {
   left: 0%;
   z-index: 100;
   clip-path: polygon(25% 100%, 50% 0%, 0% 0%, 0% 100%);
+}
+
+#left-text {
+  position: relative;
+  top: 0vh;
+  left: 0vw;
+  margin: 30px;
+  font-family: "menutext";
+  -webkit-text-stroke: 10px;
+  display: inline-block;
+  transform: rotateZ(90deg);
+  font-size: 150px;
+  letter-spacing: 1px;
 }
