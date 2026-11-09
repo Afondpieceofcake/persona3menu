@@ -3,3 +3,22 @@ Flow of app
 1. click main menu to initialize
 2. click arrow keys to switch selector variable
 3. 
+
+
+
+To adapt to the amount of items, I'm thinking it would be good to do this
+Because for now I'm using a ball and don't want to randomize the angles of them yet, I want to circle the assets around the ball
+
+
+1. Take 180 degrees (because only on the right side)
+2. Take amount of items (n), and divide 180 by n(a).
+3. Then divide x by 2(b)
+4. Then take b, and increment angle and angle placement of each item by a.
+
+V cool
+
+Okay maybe that's a bit difficult for now. Let's just try working on making the design of the page as similar as possible.
+
+Starting from the simplest element: the background
+
+
