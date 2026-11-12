@@ -185,19 +185,30 @@ body {
 .head-holder {
   position: fixed;
   background-color: white;
-  height: clamp(8rem, calc(100px + 20rem), 25rem);
+  height: clamp(8rem, calc(100px + 25rem), 30rem);
   width: clamp(3rem, calc(50px + 8rem), 15rem);
   right: 0%;
   top: 10%;
   display: flex;
-  align-content: space-between;
-  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .head {
   position: relative;
   background-color: #1ea4fd;
-  inset: 0;
   width: 100%;
-  height: 50%;
+  height: 33%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.head-image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  src: "./images/placeholder_image.png";
 }
