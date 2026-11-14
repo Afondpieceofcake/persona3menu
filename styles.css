@@ -6,63 +6,210 @@
   font-display: swap;
 }
 
+body {
+  background: linear-gradient(180deg, #1ea4fd, #0218bf);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .main-menu {
-  position: relative;
-  width: 15rem;
-  height: 15rem;
-  background-color: aliceblue;
+  position: fixed;
+  width: 28vh;
+  height: 15vw;
+  background-color: transparent;
   border-radius: 150px;
-  top: 50%;
-  left: calc(50% - 15rem);
   display: flex;
 }
 
 .item-holder {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-flow: column nowrap;
-  transform: translateX(100%);
+  left: 0%;
+  top: 20%;
+}
+
+.item-holder :nth-child(even) {
+  color: #23affb;
 }
 
 .menu-item {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15rem;
-  height: 5rem;
+  width: 22.2vh;
+  height: 7.4vh;
   font-family: "menutext";
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: 600;
-  background-color: rgb(0, 51, 96);
+  background-color: transparent;
   border-radius: 16px;
-  margin: 5px;
+  margin: 20px 5px;
   position: relative;
-  isolation: isolate;
+  -webkit-text-stroke: 7px;
+  letter-spacing: 1px;
+  font-style: italic;
+  color: #5ee0ff;
 }
 
 .selected {
-  color: red;
+  color: rgb(0, 8, 51);
   background: transparent;
-  width: 300px;
-  aspect-ratio: 1;
+  position: relative;
+  transition:
+    transform 0.4s ease-out,
+    opacity 0.4s ease-out;
+  transform-origin: center;
 }
 
 .selected::before {
-  content: "";
+  content: attr(data-text);
   position: absolute;
-  inset: 0;
-  background: white;
-  clip-path: polygon(90% 0%, 70% 95%, 0% 65%);
-  z-index: -1;
+  color: #ff1900;
+  background: rgb(255, 255, 255);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  top: -30%;
+  left: -12.4%;
+  width: 300px;
+
+  clip-path: polygon(0% 70%, 78% 65%, 100% 20%);
+  transition:
+    transform 0.4s ease-out,
+    opacity 0.4s ease-out;
+  transform-origin: center;
 }
 
 .selected::after {
-  content: "";
+  content: attr(data-text);
   position: absolute;
-  inset: 5px -5px -5px 5px;
-  background: aqua;
-  clip-path: polygon(90% 0%, 70% 95%, 0% 65%);
-  z-index: -2;
+  color: #ff1900;
+  background: #ff5fb9;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  top: -27%;
+  left: -50%;
+  width: 300px;
+
+  clip-path: polygon(20% 66%, 66% 70%, 80% 26%);
+  z-index: 1;
+  transition:
+    transform 0.4s ease-out,
+    opacity 0.4s ease-out;
+  transform-origin: center;
+}
+
+.selected.active {
+  color: rgb(0, 8, 51);
+  background: transparent;
+  transform: scale(1.2);
+}
+
+.selected.active::before {
+  content: attr(data-text);
+  position: absolute;
+  color: #ff1900;
+  background: rgb(255, 255, 255);
+  z-index: 1;
+  display: flex;
+  top: -100%;
+  left: -23%;
+  width: 200%;
+  height: 250%;
+  transition-delay: 2s;
+  clip-path: polygon(0% 70%, 78% 90%, 100% 10%);
+  z-index: 2;
+  justify-content: flex-start;
+}
+
+.selected.active::after {
+  content: attr(data-text);
+  position: absolute;
+  color: #ff1900;
+  background: #ff5fb9;
+  z-index: 1;
+  display: flex;
+  top: -100%;
+  left: -23%;
+  width: 200%;
+  height: 250%;
+
+  clip-path: polygon(0% 70%, 80% 70%, 95% 20%);
+  z-index: 1;
 }
 
 /* make 3 different ones, and loop their usage */
+
+#left-white {
+  position: fixed;
+
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  inset: 0;
+  z-index: 100;
+  clip-path: polygon(25% 100%, 50% 0%, 0% 0%, 0% 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+#left-text {
+  position: absolute;
+  font-family: "menutext";
+  -webkit-text-stroke: 20px;
+  left: -4px;
+  top: 0;
+  margin: 0;
+  display: inline-block;
+  color: black;
+  line-height: 16rem;
+  transform: rotate(90deg) translateX(-34%) skewX(-9deg);
+  font-size: clamp(5rem, 19rem, 20rem);
+  letter-spacing: -10px;
+  transform-origin: bottom left;
+}
+
+#left-text span {
+  display: inline-block;
+  letter-spacing: -50px;
+  color: grey;
+}
+
+.head-holder {
+  position: fixed;
+  background-color: white;
+  height: clamp(8rem, calc(100px + 25rem), 30rem);
+  width: clamp(3rem, calc(50px + 8rem), 15rem);
+  right: 0%;
+  top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.head {
+  position: relative;
+  background-color: #1ea4fd;
+  width: 100%;
+  height: 33%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.head-image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  src: "./images/placeholder_image.png";
+}

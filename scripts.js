@@ -6,6 +6,7 @@ function itemSelect(element) {
   let previousSelector = 0;
 
   menuItem[selector].classList.add("selected");
+  menuItem[selector].classList.add("active");
 
   document.addEventListener("keydown", function (event) {
     switch (event.key) {
@@ -25,7 +26,9 @@ function itemSelect(element) {
     }
 
     menuItem[previousSelector].classList.remove("selected");
+    menuItem[previousSelector].classList.remove("active");
     menuItem[selector].classList.add("selected");
+    menuItem[selector].classList.add("active");
   });
 }
 
