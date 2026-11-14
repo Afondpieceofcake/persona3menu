@@ -213,3 +213,14 @@ body {
   width: 100%;
   src: "./images/placeholder_image.png";
 }
+
+.cash-box {
+  position: absolute;
+  height: 7rem;
+  width: 14rem;
+  background-color: white;
+  border: 2.67px solid black;
+  z-index: 2;
+  top: 5%;
+  left: 10%;
+}
