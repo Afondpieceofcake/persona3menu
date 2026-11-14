@@ -124,7 +124,7 @@ body {
   width: 200%;
   height: 250%;
   transition-delay: 2s;
-  clip-path: polygon(0% 70%, 78% 90%, 100% 10%);
+  clip-path: polygon(10% 70%, 81% 98%, 95% 51%);
   z-index: 2;
   justify-content: flex-start;
 }
@@ -134,14 +134,14 @@ body {
   position: absolute;
   color: #ff1900;
   background: #ff5fb9;
-  z-index: 1;
   display: flex;
   top: -100%;
   left: -23%;
   width: 200%;
   height: 250%;
+  justify-content: flex-start;
 
-  clip-path: polygon(0% 70%, 80% 70%, 95% 20%);
+  clip-path: polygon(0% 65%, 83% 100%, 100% 50%);
   z-index: 1;
 }
 
