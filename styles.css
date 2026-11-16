@@ -262,6 +262,7 @@ body {
   font-style: normal;
   transform: translateY(-0.5rem) skewX(-6deg);
   -webkit-text-stroke: 1px;
+  background-color: transparent;
 }
 
 .cash-box p {
