@@ -11,6 +11,11 @@
 @font-face {
   font-family: "cashtext";
   src: url(./fonts/Gluten-Light.ttf);
+}
+
+@font-face {
+  font-family: "skilltext";
+  src: url(./fonts/FOT-NewRodin\ Pro\ DB.otf);
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -199,7 +204,7 @@ body {
   height: clamp(8rem, calc(100px + 25rem), 30rem);
   width: clamp(3rem, calc(50px + 8rem), 15rem);
   right: 0%;
-  top: 10%;
+  top: 8%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -264,4 +269,19 @@ body {
   inset: 15px;
   border: 3px solid transparent;
   margin: 0;
+}
+
+#skill-usage {
+  position: fixed;
+  height: 17%;
+  width: 34%;
+  background-color: #ff5fb9;
+  right: 0;
+  bottom: 33%;
+  font-family: skilltext;
+}
+
+#skill-usage img {
+  height: 100px;
+  width: auto;
 }
