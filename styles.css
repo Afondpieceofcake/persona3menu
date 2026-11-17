@@ -277,12 +277,12 @@ body {
   height: 14%;
   width: 34%;
   background-color: #ff5fb9;
-  right: 0;
+  right: -17%;
   bottom: 0%;
   font-family: skilltext;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 #skill-usage img {
@@ -297,6 +297,7 @@ body {
   margin: 0;
   border: 2px transparent;
   width: fit-content;
+  border: 2px solid white;
 }
 #skill-usage > :nth-child(1) {
   font-size: 35px;
@@ -304,5 +305,29 @@ body {
   transform: scaleY(1.3) skewX(-5deg);
 }
 
-#skill-usage > :nth-child(2) {
+#skill-usage_button {
+  transform: translate(-40%, -15%);
+  font-family: menutext;
+  display: flex;
+  align-self: flex-start;
+  margin: 0;
+  border: 2px solid white;
+  height: fit-content;
+}
+
+#skill-usage_button img {
+  transform: scale(0.7);
+  border: 3px solid white;
+  margin: 0;
+}
+
+#skill-usage_button p {
+  transform: scaleY(1.3) skewX(-6deg);
+  border: 3px solid white;
+  margin: 0;
+  align-self: center;
+  font-size: 30px;
+  text-shadow:
+    3px 3px 7px white,
+    4px 4px 7px black;
 }
