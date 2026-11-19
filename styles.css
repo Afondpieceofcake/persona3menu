@@ -53,6 +53,10 @@ body {
   color: #23affb;
 }
 
+.item-holder :nth-child(odd) {
+  color: #5ee0ff;
+}
+
 .menu-item {
   display: flex;
   justify-content: center;
@@ -72,6 +76,24 @@ body {
   color: #5ee0ff;
 }
 
+.main-menu_overlay {
+  position: fixed;
+  width: 28vh;
+  height: 15vw;
+  background-color: transparent;
+  border-radius: 150px;
+  display: flex;
+}
+
+.main-menu_overlay .menu-item {
+  color: red;
+  z-index: 5;
+}
+
+.main-menu .menu-item {
+  z-index: 0;
+}
+
 .selected {
   color: rgb(0, 8, 51);
   background: transparent;
@@ -82,82 +104,7 @@ body {
   transform-origin: center;
 }
 
-.selected::before {
-  content: attr(data-text);
-  position: absolute;
-  color: #ff1900;
-  background: rgb(255, 255, 255);
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  top: -30%;
-  left: -12.4%;
-  width: 300px;
-
-  clip-path: polygon(0% 70%, 78% 65%, 100% 20%);
-  transition:
-    transform 0.4s ease-out,
-    opacity 0.4s ease-out;
-  transform-origin: center;
-}
-
-.selected::after {
-  content: attr(data-text);
-  position: absolute;
-  color: #ff1900;
-  background: #ff5fb9;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  top: -27%;
-  left: -50%;
-  width: 300px;
-
-  clip-path: polygon(20% 66%, 66% 70%, 80% 26%);
-  z-index: 1;
-  transition:
-    transform 0.4s ease-out,
-    opacity 0.4s ease-out;
-  transform-origin: center;
-}
-
 .selected.active {
-  color: rgb(0, 8, 51);
-  background: transparent;
-  transform: scale(1.2);
-}
-
-.selected.active::before {
-  content: attr(data-text);
-  position: absolute;
-  color: #ff1900;
-  background: rgb(255, 255, 255);
-  z-index: 1;
-  display: flex;
-  top: -85%;
-  left: -50%;
-  width: 200%;
-  height: 250%;
-  transition-delay: 2s;
-  clip-path: polygon(10% 69%, 81% 98%, 95% 51%);
-  z-index: 2;
-  justify-content: center;
-}
-
-.selected.active::after {
-  content: attr(data-text);
-  position: absolute;
-  color: #ff1900;
-  background: #ff5fb9;
-  display: flex;
-  top: -85%;
-  left: -50%;
-  width: 200%;
-  height: 250%;
-  justify-content: center;
-
-  clip-path: polygon(0% 65%, 83% 100%, 100% 50%);
-  z-index: 1;
 }
 
 /* make 3 different ones, and loop their usage */
@@ -165,7 +112,7 @@ body {
 #left-white {
   position: fixed;
 
-  background-color: white;
+  background-color: transparent;
   height: 100vh;
   width: 100vw;
   inset: 0;
@@ -275,9 +222,9 @@ body {
 #skill-usage {
   position: fixed;
   height: 14%;
-  width: 34%;
-  background-color: #ff5fb9;
-  right: -17%;
+  width: fit-content;
+  background-color: transparent;
+  right: -7%;
   bottom: 0%;
   font-family: skilltext;
   display: flex;
@@ -297,7 +244,7 @@ body {
   margin: 0;
   border: 2px transparent;
   width: fit-content;
-  border: 2px solid white;
+  border: 2px solid transparent;
 }
 #skill-usage > :nth-child(1) {
   font-size: 35px;
@@ -306,28 +253,33 @@ body {
 }
 
 #skill-usage_button {
-  transform: translate(-40%, -15%);
+  transform: translate(-45%, -25%);
   font-family: menutext;
   display: flex;
   align-self: flex-start;
   margin: 0;
-  border: 2px solid white;
+  border: 2px solid transparent;
   height: fit-content;
 }
 
 #skill-usage_button img {
   transform: scale(0.7);
-  border: 3px solid white;
+  border: 3px solid transparent;
   margin: 0;
 }
 
 #skill-usage_button p {
   transform: scaleY(1.3) skewX(-6deg);
-  border: 3px solid white;
+  border: 3px solid transparent;
   margin: 0;
   align-self: center;
   font-size: 30px;
   text-shadow:
-    3px 3px 7px white,
-    4px 4px 7px black;
+    0px 0px 5px white,
+    0px 0px 5px black;
+}
+
+#video_background {
+  width: 100%;
+  height: 100%;
 }
