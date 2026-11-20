@@ -2,13 +2,10 @@ Flow of app
 
 1. click main menu to initialize
 2. click arrow keys to switch selector variable
-3. 
-
-
+3.
 
 To adapt to the amount of items, I'm thinking it would be good to do this
 Because for now I'm using a ball and don't want to randomize the angles of them yet, I want to circle the assets around the ball
-
 
 1. Take 180 degrees (because only on the right side)
 2. Take amount of items (n), and divide 180 by n(a).
@@ -21,4 +18,24 @@ Okay maybe that's a bit difficult for now. Let's just try working on making the 
 
 Starting from the simplest element: the background
 
+I want to revamp the system for the selector button
 
+As of right now, the code I use doesn't seem the most modular, and I can't really have full control over the animations. So, I will now attempt to use some logic to revamp the system.
+
+1. I need someway to group the items together. Maybe I could use a sort of div that could edit the text/add text overlay colors and what not.
+
+2. Maybe I could use JS to grab the text/information inside of the P tag in each menu item
+
+3. I want the text to stay still while I edit the sizing of the text. I wonder if I can use a sort of special css that can alter text below it. Possibly using a color overlay thing? alpha layers? let me look for them
+
+I have to make 3 positions for now, and I will use javascript to assign a position ID to each spot. I will first have to manually assign and size each position. Then, I will be able to animate the triangle in between position ID's, resulting in a reworked system that doesn't require the use of ::after or ::before and make the animations easier and the overlay text be able to stay the same size and position with the text below it without any problems (unless you zoom out too far)
+
+Steps to work out:
+
+1. test using the skill item and equip, make the rotation and size based on the original game menu.
+
+2. Use the arrow keys to be able to switch between items, and make the items resize first
+
+3. then assign the position ID's
+
+4. then expand to the rest of the items in the menu
